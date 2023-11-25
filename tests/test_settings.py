@@ -1,5 +1,8 @@
-from src import settings
+# Standard Library
 import os
+
+# First Party Library
+from src import settings
 
 
 def test_base_dir() -> None:
