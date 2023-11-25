@@ -8,13 +8,12 @@ def set_logger(module_name: str) -> logging.Logger:
     logger.handlers.clear()
 
     streamHandler = logging.StreamHandler()
-
     formatter = logging.Formatter(
         "%(asctime)s [%(levelname)s] (%(filename)s | %(funcName)s | %(lineno)s) %(message)s"
     )
-
     streamHandler.setFormatter(formatter)
-
     logger.setLevel(logging.DEBUG)
+    streamHandler.setLevel(logging.INFO)
+    logger.addHandler(streamHandler)
 
     return logger

@@ -29,11 +29,11 @@ build-backend = "poetry.core.masonry.api"
 [tool.taskipy.tasks]
 test = "pytest -s -vv --cov=. --cov-branch --cov-report=html"
 format = "task format-black && task format-isort"
-format-black = "black src tests"
-format-isort = "isort src tests"
+format-black = "black src tests main.py"
+format-isort = "isort src tests main.py"
 lint = "task format && task lint-ruff && task lint-mypy"
-lint-ruff = "ruff src tests --fix"
-lint-mypy = "mypy src tests"
+lint-ruff = "ruff src tests main.py --fix"
+lint-mypy = "mypy src tests  main.py"
 lint-black = "black --check src tests"
 
 

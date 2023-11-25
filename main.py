@@ -1,7 +1,8 @@
+# First Party Library
 from src.controllers import notify
 
 
-def main():
+def main() -> None:
     notify.slack_with_template(
         template_file="notify.txt",
         template_args={
