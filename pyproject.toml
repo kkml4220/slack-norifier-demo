@@ -7,9 +7,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-slack-sdk = "^3.26.0"
 load-dotenv = "^0.1.0"
-ruff = "^0.1.6"
+requests = "^2.31.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -20,6 +19,8 @@ mypy = "^1.7.1"
 pytest = "^7.4.3"
 pytest-cov = "^4.1.0"
 pytest-mock = "^3.12.0"
+ruff = "^0.1.6"
+types-requests = "^2.31.0.10"
 
 [build-system]
 requires = ["poetry-core"]
@@ -28,11 +29,11 @@ build-backend = "poetry.core.masonry.api"
 [tool.taskipy.tasks]
 test = "pytest -s -vv --cov=. --cov-branch --cov-report=html"
 format = "task format-black && task format-isort"
-format-black = "black src tests"
-format-isort = "isort src tests"
+format-black = "black src tests main.py"
+format-isort = "isort src tests main.py"
 lint = "task format && task lint-ruff && task lint-mypy"
-lint-ruff = "ruff src tests --fix"
-lint-mypy = "mypy src tests"
+lint-ruff = "ruff src tests main.py --fix"
+lint-mypy = "mypy src tests  main.py"
 lint-black = "black --check src tests"
 
 
@@ -64,5 +65,5 @@ warn_redundant_casts = true
 
 
 [tool.ruff]
-select = ["E", "F", "I"]
-unfixable = ["F401", "F841"]
+# But use a different line length.
+line-length = 100
