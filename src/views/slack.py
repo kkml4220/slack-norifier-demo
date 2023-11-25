@@ -53,7 +53,7 @@ def find_template(template_file: str) -> str:
     return template_file_path
 
 
-def get_template(template_file: str):
+def get_template(template_file: str) -> str:
     """テンプレートファイルを返します
 
     Args:
