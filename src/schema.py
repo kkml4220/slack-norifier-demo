@@ -1,13 +1,10 @@
-from typing import TypedDict, Literal
-
-
-class StatusSchema(TypedDict):
-    status: Literal["success", "error"]
+# Standard Library
+from typing import Literal, TypedDict
 
 
 class TemplateArgs(TypedDict):
     """テンプレートの引数"""
 
     title: str
-    status: StatusSchema
+    status: Literal["success", "error", ":white_check_mark:", ":x:"]
     description: str

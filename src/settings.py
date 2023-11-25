@@ -1,6 +1,7 @@
 # Standard Library
 import os
 
+# Third Party Library
 from load_dotenv import load_dotenv
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
