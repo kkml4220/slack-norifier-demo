@@ -1,0 +1,26 @@
+{
+    "attachments": [
+        {
+            "color": "#0D5C63",
+            "blocks": [
+                {
+                    "type": "header",
+                    "text": {
+                        "type": "plain_text",
+                        "text": "${status} ${title}",
+                        "emoji": true
+                    }
+                },
+                {
+                    "type": "context",
+                    "elements": [
+                        {
+                            "type": "mrkdwn",
+                            "text": "Status: ${status}\n\nDescription\n > ${description}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
