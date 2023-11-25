@@ -15,6 +15,12 @@ pip install poetry
 poetry install
 ```
 
+`.env.template`を参考に`.env`ファイルを作成し、プロジェクト直下に配置してください。
+
+```plaintext
+SLACK_WEBHOOK_URL=""
+```
+
 ## Usage
 
 デモは次のコマンドで実行できます。
