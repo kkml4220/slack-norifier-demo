@@ -1,5 +1,7 @@
 # Standard Library
+import json
 import os
+import string
 
 # First Party Library
 from src.settings import BASE_DIR
@@ -53,16 +55,16 @@ def find_template(template_file: str) -> str:
     return template_file_path
 
 
-def get_template(template_file: str) -> str:
+def get_template(template_file: str) -> string.Template:
     """テンプレートファイルを返します
 
     Args:
         template_file (str): テンプレートファイルのパス
 
     Returns:
-        str: テンプレートファイルの中身
+        string.Template: テンプレートファイルの中身
     """
     template_file_path = find_template(template_file)
     with open(template_file_path, "r", encoding="utf-8") as template:
         contents = template.read()
-        return contents
+        return string.Template(contents)
