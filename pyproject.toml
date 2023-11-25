@@ -7,9 +7,8 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.12"
-slack-sdk = "^3.26.0"
 load-dotenv = "^0.1.0"
-ruff = "^0.1.6"
+requests = "^2.31.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -20,6 +19,7 @@ mypy = "^1.7.1"
 pytest = "^7.4.3"
 pytest-cov = "^4.1.0"
 pytest-mock = "^3.12.0"
+ruff = "^0.1.6"
 
 [build-system]
 requires = ["poetry-core"]
@@ -64,5 +64,5 @@ warn_redundant_casts = true
 
 
 [tool.ruff]
-select = ["E", "F", "I"]
-unfixable = ["F401", "F841"]
+# But use a different line length.
+line-length = 100
